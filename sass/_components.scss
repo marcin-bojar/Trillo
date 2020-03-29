@@ -282,8 +282,18 @@
     border-bottom: 1px solid currentColor;
     transition: all .2s;
 
+    & span { 
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+
     &:hover {
         color: var(--color-grey-dark-1);
+
+        span {
+            margin-left: 8px;
+            color: var(--color-grey-dark-1);
+        }
     }
     &:focus {
         outline: none;
@@ -373,5 +383,70 @@
         border: 3px solid #fff;
         
         &:not(:last-child) { margin-right: -1.5rem;}
+    }
+}
+
+
+//////////////////////////////////////////////////
+/// RECOMMEND
+.review {
+    background-color: #fff;
+    margin-bottom: 3.5rem;
+    padding: 3rem;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+        margin-bottom: 2.5rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
+
+    &__user-box {
+        margin-right: auto;
+        margin-left: 1.5rem;
+        
+    }
+
+    &__user-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+    }
+
+    &__date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+
+    &__rating {
+        color: var(--color-primary);
+        font-size: 2.25rem;
+        font-weight: 300;
+    }
+
+    &::before {
+        content: "\201C";
+        position: absolute;
+        top: -2.7rem;
+        left: -1rem;
+        font-size: 20rem;
+        font-family: sans-serif;
+        line-height: 1;
+        color: var(--color-grey-light-2);
+        z-index: 1;
     }
 }
