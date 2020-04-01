@@ -25,6 +25,12 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 46.875em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -45,6 +51,11 @@ body {
   justify-content: center;
   align-items: center;
   flex: 0 0 40%; }
+  @media only screen and (max-width: 31.25em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2); } }
   .search__input {
     font-family: inherit;
     font-size: inherit;
@@ -56,10 +67,19 @@ body {
     width: 90%;
     transition: all .2s;
     margin-right: -3.5rem; }
+    @media only screen and (max-width: 31.25em) {
+      .search__input {
+        width: 100%;
+        margin-right: 0;
+        padding: .7rem 1rem; } }
     .search__input:focus {
       outline: none;
       width: 100%;
       background-color: var(--color-grey-light-3); }
+      @media only screen and (max-width: 31.25em) {
+        .search__input:focus {
+          background-color: var(--color-grey-light-2);
+          outline: 0.5px solid var(--color-primary); } }
     .search__input::-webkit-input-placeholder {
       color: var(--color-grey-light-4);
       font-weight: 100; }
@@ -70,6 +90,10 @@ body {
     width: 2rem;
     border: none;
     background-color: var(--color-grey-light-2); }
+    @media only screen and (max-width: 31.25em) {
+      .search__button {
+        visibility: hidden;
+        display: none; } }
     .search__button:focus {
       outline: none; }
     .search__button:active {
@@ -119,10 +143,21 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 62.5em) {
+    .side-nav {
+      display: flex;
+      margin: 0;
+      align-items: center; } }
   .side-nav__item {
     position: relative; }
     .side-nav__item:not(:last-child) {
       margin-bottom: .5rem; }
+      @media only screen and (max-width: 62.5em) {
+        .side-nav__item:not(:last-child) {
+          margin: 0; } }
+    @media only screen and (max-width: 62.5em) {
+      .side-nav__item {
+        flex: 1; } }
   .side-nav__item::before {
     content: "";
     position: absolute;
@@ -148,17 +183,34 @@ body {
     z-index: 10;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 62.5em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        justify-content: center;
+        padding: 2rem 3rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column;
+        padding: 1.5rem 2.5rem; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; }
+    @media only screen and (max-width: 37.5em) {
+      .side-nav__icon {
+        margin-bottom: .5rem;
+        margin-right: 0;
+        width: 1.5rem;
+        height: 1.5rem; } }
 
 .legal {
   padding: 2.5rem;
   font-size: 1.2rem;
   color: vat(--color-grey-light-4);
   text-align: center; }
+  @media only screen and (max-width: 62.5em) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex; }
@@ -176,6 +228,10 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1.5rem 3rem; }
+    @media only screen and (max-width: 46.875em) {
+      .overview__heading {
+        font-size: 1.9rem;
+        padding: 1rem 2rem; } }
   .overview__stars {
     display: flex;
     margin-right: auto; }
@@ -199,6 +255,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 46.875em) {
+      .overview__rating {
+        padding: 0 1.75rem; } }
   .overview__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
@@ -272,6 +331,8 @@ body {
     font-size: 1.3rem;
     color: var(--color-grey-dark-2);
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
   .recommend__photo {
     box-sizing: content-box;
     height: 4rem;
@@ -288,6 +349,10 @@ body {
   box-shadow: var(--shadow-light);
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 62.5em) {
+    .review {
+      padding: 2rem;
+      width: 95%; } }
   .review__text {
     margin-bottom: 2.5rem;
     position: relative;
@@ -299,6 +364,9 @@ body {
     height: 4rem;
     width: 4rem;
     border-radius: 50%; }
+    @media only screen and (max-width: 37.5em) {
+      .review__photo {
+        margin-left: 5rem; } }
   .review__user-box {
     margin-right: auto;
     margin-left: 1.5rem; }
@@ -314,6 +382,9 @@ body {
     color: var(--color-primary);
     font-size: 2.25rem;
     font-weight: 300; }
+    @media only screen and (max-width: 37.5em) {
+      .review__rating {
+        margin-right: 5rem; } }
   .review::before {
     content: "\201C";
     position: absolute;
@@ -329,11 +400,18 @@ body {
   background-color: #fff;
   padding: 3.5rem 0;
   text-align: center; }
+  @media only screen and (max-width: 62.5em) {
+    .cta {
+      padding: 2.5rem 0; } }
   .cta__book-now {
     font-size: 2.1rem;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 3.5rem; }
+    @media only screen and (max-width: 46.875em) {
+      .cta__book-now {
+        font-size: 1.75rem;
+        margin-bottom: 2rem; } }
 
 .btn {
   border: none;
@@ -375,6 +453,11 @@ body {
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      width: 100%; } }
 
 .header {
   font-size: 1.4rem;
@@ -384,9 +467,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between; }
+  @media only screen and (max-width: 31.25em) {
+    .header {
+      flex-wrap: wrap;
+      height: 11rem; } }
 
 .content {
   display: flex; }
+  @media only screen and (max-width: 62.5em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   display: flex;
@@ -405,6 +495,12 @@ body {
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line); }
+  @media only screen and (max-width: 62.5em) {
+    .details {
+      padding: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .details {
+      flex-direction: column; } }
 
 .description {
   flex: 0 0 60%;
@@ -412,6 +508,14 @@ body {
   margin-right: 4.5rem;
   padding: 3rem;
   box-shadow: var(--shadow-light); }
+  @media only screen and (max-width: 62.5em) {
+    .description {
+      padding: 2rem;
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 62.5em) {
+    .description {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   display: flex;

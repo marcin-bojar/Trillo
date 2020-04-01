@@ -38,6 +38,14 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px
+
+    @include respond(big) {
+        font-size: 56.25%;
+    }
+
+    @include respond(small) {
+        font-size: 50%;
+    }
 }
 
 body {

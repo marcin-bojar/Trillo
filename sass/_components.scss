@@ -13,6 +13,12 @@
     align-items: center;
     flex: 0 0 40%;
 
+    @include respond(phone) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -25,10 +31,21 @@
         transition: all .2s;
         margin-right: -3.5rem;
 
+        @include respond(phone) {
+            width: 100%;
+            margin-right: 0;
+            padding: .7rem 1rem;
+        }
+
         &:focus {
             outline: none;
             width: 100%;
             background-color: var(--color-grey-light-3);
+
+            @include respond(phone) {
+                background-color: var(--color-grey-light-2);
+                outline: .5px solid var(--color-primary);  
+            }
         }  
         
         &::-webkit-input-placeholder {
@@ -46,6 +63,11 @@
         width: 2rem;
         border: none;
         background-color: var(--color-grey-light-2);
+
+        @include respond(phone) {
+            visibility: hidden;
+            display: none;
+        }
 
         &:focus {
             outline: none;
@@ -125,10 +147,23 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @include respond(medium) {
+        display: flex;  
+        margin: 0;
+        align-items: center;
+    }
+
     &__item {
         position: relative;
 
-        &:not(:last-child) {margin-bottom: .5rem;}
+        &:not(:last-child) { 
+            margin-bottom: .5rem;
+            
+            @include respond(medium) { margin: 0; }
+        }
+
+        @include respond(medium) { flex: 1; }
+
     }
 
     &__item::before {
@@ -167,6 +202,16 @@
 
         display: flex;
         align-items: center;
+
+        @include respond(medium) {
+            justify-content: center; 
+            padding: 2rem 3rem;  
+        }
+
+        @include respond(very-small) {
+            flex-direction: column;
+            padding: 1.5rem 2.5rem;
+        }
     }
 
     &__icon {
@@ -174,6 +219,13 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @include respond(very-small) {
+            margin-bottom: .5rem;
+            margin-right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }
 
@@ -185,6 +237,10 @@
     font-size: 1.2rem;
     color: vat(--color-grey-light-4);
     text-align: center;
+
+    @include respond(medium) {
+        display: none;       
+    }
 }
 
 
@@ -218,6 +274,11 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         padding: 1.5rem 3rem;
+
+        @include respond(small) {
+            font-size: 1.9rem;
+            padding: 1rem 2rem;
+        }
     }
 
     &__stars {
@@ -253,6 +314,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @include respond(small) {
+            padding: 0 1.75rem;
+        }
     }
 
     &__rating-average {
@@ -264,7 +329,6 @@
     &__rating-count {
         font-size: .9rem;
     }
-
 
 }
 
@@ -360,8 +424,6 @@
 }
 
 
-
-
 //////////////////////////////////////////////////
 /// RECOMMEND
 .recommend {
@@ -372,6 +434,10 @@
         font-size: 1.3rem;
         color: var(--color-grey-dark-2);
         margin-right: auto;
+    }
+
+    &__friends {
+        display: flex;
     }
 
     &__photo {
@@ -388,7 +454,7 @@
 
 
 //////////////////////////////////////////////////
-/// RECOMMEND
+/// USER REVIEWS
 .review {
     background-color: #fff;
     margin-bottom: 3.5rem;
@@ -396,6 +462,11 @@
     box-shadow: var(--shadow-light);
     position: relative;
     overflow: hidden;
+
+    @include respond(medium) {
+        padding: 2rem; 
+        width: 95%; 
+    }
 
     &__text {
         margin-bottom: 2.5rem;
@@ -406,18 +477,22 @@
     &__user {
         display: flex;
         align-items: center;
+
     }
 
     &__photo {
         height: 4rem;
         width: 4rem;
         border-radius: 50%;
+
+        @include respond(very-small) {
+            margin-left: 5rem;
+         }
     }
 
     &__user-box {
         margin-right: auto;
-        margin-left: 1.5rem;
-        
+        margin-left: 1.5rem;     
     }
 
     &__user-name {
@@ -436,6 +511,10 @@
         color: var(--color-primary);
         font-size: 2.25rem;
         font-weight: 300;
+
+        @include respond(very-small) {
+              margin-right: 5rem;
+           }
     }
 
     &::before {
@@ -459,11 +538,20 @@
     padding: 3.5rem 0;
     text-align: center;
 
+    @include respond(medium) {
+        padding: 2.5rem 0;  
+    }
+
     &__book-now {
         font-size: 2.1rem;
         font-weight: 300;
         text-transform: uppercase;
         margin-bottom: 3.5rem;
+
+        @include respond(small) {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+        }
     }
 
 }
