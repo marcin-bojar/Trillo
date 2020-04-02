@@ -158,6 +158,12 @@ body {
     @media only screen and (max-width: 62.5em) {
       .side-nav__item {
         flex: 1; } }
+    @media only screen and (max-width: 31.25em) {
+      .side-nav__item {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
   .side-nav__item::before {
     content: "";
     position: absolute;
@@ -191,6 +197,11 @@ body {
       .side-nav__link:link, .side-nav__link:visited {
         flex-direction: column;
         padding: 1.5rem 2.5rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        align-self: stretch;
+        flex: 0 0 100%;
+        text-align: center; } }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
@@ -202,6 +213,9 @@ body {
         margin-right: 0;
         width: 1.5rem;
         height: 1.5rem; } }
+    @media only screen and (max-width: 27.5em) {
+      .side-nav__icon {
+        display: none; } }
 
 .legal {
   padding: 2.5rem;
@@ -222,6 +236,9 @@ body {
   display: flex;
   align-items: center;
   border-bottom: var(--line); }
+  @media only screen and (max-width: 27.5em) {
+    .overview {
+      flex-wrap: wrap; } }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -232,6 +249,12 @@ body {
       .overview__heading {
         font-size: 1.9rem;
         padding: 1rem 2rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .overview__heading {
+        padding: 1rem 1.5rem; } }
+    @media only screen and (max-width: 27.5em) {
+      .overview__heading {
+        margin-left: auto; } }
   .overview__stars {
     display: flex;
     margin-right: auto; }
@@ -245,6 +268,13 @@ body {
     display: flex;
     align-items: center;
     font-size: 1.2rem; }
+    @media only screen and (max-width: 31.25em) {
+      .overview__location {
+        margin-left: 3rem; } }
+    @media only screen and (max-width: 27.5em) {
+      .overview__location {
+        margin-right: auto;
+        flex: 0 0 50%; } }
   .overview__rating {
     background-color: var(--color-primary);
     color: #fff;
@@ -258,6 +288,13 @@ body {
     @media only screen and (max-width: 46.875em) {
       .overview__rating {
         padding: 0 1.75rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .overview__rating {
+        padding: 0 1.5rem;
+        margin-left: 2rem; } }
+    @media only screen and (max-width: 27.5em) {
+      .overview__rating {
+        margin-right: 3rem; } }
   .overview__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
@@ -501,6 +538,9 @@ body {
   @media only screen and (max-width: 37.5em) {
     .details {
       flex-direction: column; } }
+  @media only screen and (max-width: 27.5em) {
+    .details {
+      padding: 1.2rem; } }
 
 .description {
   flex: 0 0 60%;

@@ -23,4 +23,8 @@
     @if $bp == phone {
         @media only screen and (max-width: 31.25em) { @content };
     }
+
+    @if $bp == xs {
+        @media only screen and (max-width: 27.5em) { @content };
+    }
 }

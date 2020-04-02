@@ -154,7 +154,7 @@
     }
 
     &__item {
-        position: relative;
+        position: relative;  
 
         &:not(:last-child) { 
             margin-bottom: .5rem;
@@ -163,6 +163,14 @@
         }
 
         @include respond(medium) { flex: 1; }
+
+        @include respond(phone) {
+            align-self: stretch;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
     }
 
@@ -212,6 +220,12 @@
             flex-direction: column;
             padding: 1.5rem 2.5rem;
         }
+
+        @include respond(phone) {
+            align-self: stretch;
+            flex: 0 0 100%;
+            text-align: center;
+        }
     }
 
     &__icon {
@@ -225,6 +239,10 @@
             margin-right: 0;
             width: 1.5rem;
             height: 1.5rem;
+        }
+
+        @include respond(xs) {
+            display: none;
         }
     }
 }
@@ -267,6 +285,10 @@
     align-items: center;
     border-bottom: var(--line);
 
+    @include respond(xs) {
+        flex-wrap: wrap;
+    }
+
 
     &__heading {
         font-size: 2.25rem;
@@ -278,6 +300,14 @@
         @include respond(small) {
             font-size: 1.9rem;
             padding: 1rem 2rem;
+        }
+
+        @include respond(phone) {
+            padding: 1rem 1.5rem;     
+        }
+
+        @include respond(xs) {
+            margin-left: auto;
         }
     }
 
@@ -301,6 +331,13 @@
         display: flex;
         align-items: center;
         font-size: 1.2rem;
+
+        @include respond(phone) { margin-left: 3rem; }
+
+        @include respond(xs) {
+            margin-right: auto;
+            flex: 0 0 50%;      
+        }
     }
 
     &__rating {
@@ -318,7 +355,16 @@
         @include respond(small) {
             padding: 0 1.75rem;
         }
+
+        @include respond(phone) {
+            padding: 0 1.5rem;
+            margin-left: 2rem;    
+        }
+
+        @include respond(xs) {
+            margin-right: 3rem;
     }
+}
 
     &__rating-average {
         font-size: 2.25rem;

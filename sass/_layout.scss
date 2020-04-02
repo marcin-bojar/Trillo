@@ -57,14 +57,11 @@
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
 
-    @include respond(medium) {
-        padding: 3rem;  
-    }
+    @include respond(medium) { padding: 3rem; }
 
-    @include respond(very-small) {
-        flex-direction: column;
+    @include respond(very-small) { flex-direction: column; }
 
-    }
+    @include respond(xs) { padding: 1.2rem; }
 }
 
 .description {
